@@ -1,0 +1,357 @@
+{% load static %}
+<html>
+  <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  </head>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+          }
+          html {
+            height: 100%;  
+          }
+          
+          body {
+            min-height: 100%;  
+            background: #eee;
+            font-family: 'Lato', sans-serif;
+            font-weight: 400;
+            color: #222;
+            font-size: 14px;
+            line-height: 26px;
+            padding-bottom: 50px;
+          }
+          
+          .containerres {
+            max-width: 700px;   
+            background: #fff;
+            margin: 0px auto 0px; 
+            box-shadow: 1px 1px 2px #DAD7D7;
+            border-radius: 3px;  
+            padding: 40px;
+            margin-top: 50px;
+          }
+          
+          .header 
+          {
+            margin-bottom: 30px;
+          }
+          
+            
+            .full-name {
+              font-size: 40px;
+              text-transform: uppercase;
+              margin-bottom: 5px;
+            }
+            
+            .first-name {
+              font-weight: 700;
+            }
+            
+            .last-name {
+              font-weight: 300;
+            }
+            
+            .contact-info {
+              margin-bottom: 20px;
+            }
+            
+            .email ,
+            .phone {
+              color: #999;
+              font-weight: 300;
+            } 
+            
+            .separator {
+              height: 10px;
+              display: inline-block;
+              border-left: 2px solid #999;
+              margin: 0px 10px;
+            }
+            
+            .position {
+              font-weight: bold;
+              display: inline-block;
+              margin-right: 10px;
+              text-decoration: underline;
+            }
+          
+          
+          .details {
+            line-height: 20px;
+          }
+            
+            .sectionres {
+              margin-bottom: 40px;  
+            }
+            
+            .section:last-of-type {
+              margin-bottom: 0px;  
+            }
+            
+            .section__title {
+              letter-spacing: 2px;
+              color: #54AFE4;
+              font-weight: bold;
+              margin-bottom: 10px;
+              text-transform: uppercase;
+            }
+            
+            .section__list-item {
+              margin-bottom: 40px;
+            }
+            
+            .section__list-item:last-of-type {
+              margin-bottom: 0;
+            }
+            
+            .left ,
+            .right {
+              vertical-align: top;
+              display: inline-block;
+            }
+            
+            .left {
+              width: 60%;    
+            }
+            
+            .right {
+              tex-align: right;
+              width: 39%;    
+            }
+            
+            .name {
+              font-weight: bold;
+            }
+            
+            a {
+              text-decoration: none;
+              color: #000;
+              font-style: italic;
+            }
+            
+            a:hover {
+              text-decoration: underline;
+              color: #000;
+            }
+            
+            .skills {
+              
+            }
+              
+            .skills__item {
+              margin-bottom: 10px;  
+            }
+            
+            /* .skills__item .right {
+              
+              
+              
+              
+            } */
+            input {
+                display: none;
+              }
+              
+            label {
+                display: inline-block;  
+                width: 20px;
+                height: 20px;
+                background: #C3DEF3;
+                border-radius: 20px;
+                margin-right: 3px;
+              }
+            input:checked + label {
+                background: #79A9CE;
+              }
+          
+    </style>
+<body>
+  {% for i in data1 %}
+
+                        <div class="containerres" id="dddd">
+                                <div class="header">
+                                    <div class="full-name">
+                                        <span class="first-name">{{i.name}}</span> 
+                                    </div><br>
+                                    <div class="contact-info">
+                                        <span class="email">Email: </span>
+                                        <span class="email-val"> {{i.email}}</span>
+                                        <span class="separator"></span>
+                                        <span class="phone">Phone: </span>
+                                        <span class="phone-val">{{i.phone}}</span>
+                                        <span class="separator"></span>
+                                        <span class="phone">Site: </span>
+                                        <span class="phone-val">{{i.soci}}</span>
+                                        <span class="separator"></span>
+                                        <span class="phone">Country: </span>
+                                        <span class="phone-val">{{i.coun}}</span><br>
+                                        <span class="phone">Address: </span>
+                                        <span class="phone-val">{{i.address}}</span><br>
+                                        <span class="phone">Date of Birth: </span>
+                                        <span class="phone-val">{{i.dob}}</span><br>
+                                        <span class="phone">Gender: </span>
+                                        <span class="phone-val">{{i.gender}}</span>
+                                    </div>
+                                
+                                    <div >
+                                        <div class="section__title">Careeobjective</div>
+                                        <span class="desc">
+                                          {{i.carobj}}
+                                        </span>
+                                    </div>
+                                </div>
+                            <div class="details">
+                                
+                               
+                                    <div class="section__title">Education</div>
+                                    <div class="section__list">
+                                        <div class="section__list-item">
+                                            <div class="left">
+                                                <div class="name">College : {{i.college}}</div>
+                                                <!-- <div class="addr">San Fr, CA</div> -->
+                                                <div class="duration">Passing Year : {{i.colpy}}</div>
+                                            </div>
+                                            <div class="left">
+                                                <div class="name">Course : {{i.colcourse}}</div>
+                                                <!-- <div class="desc">did This and that</div> -->
+                                            </div>
+                                        </div>
+                                        <div class="section__list-item">
+                                            <div class="left">
+                                                <div class="name">Plus Two</div>
+                                             
+                                            </div>
+                                            <div class="left">
+                                                <div class="name">School Name : {{i.plus}}</div>
+                                                <div class="addr">Marks : {{i.plusmarks}} % marks</div>
+                                                <div class="duration">Passing Year : {{i.pluspy}}</div>
+                                            </div>
+                                            
+                                        </div>
+
+                                        <div class="section__list-item">
+                                            <div class="left">
+                                                <div class="name">Tenth</div>
+                                          
+                                            </div>
+                                            <div class="left">
+                                                <div class="name">School Name : {{i.ten}}</div>
+                                                <div class="addr">Marks : {{i.schomarks}} % marks</div>
+                                                <div class="duration">Passing Year : {{i.schopy}}</div>
+                                            </div>
+                                            
+                                        </div>
+                            
+                                    </div>
+                                    
+                                </div>
+                                
+                                    <div class="section__title">Projects</div> 
+                                    <div class="section__list mb-2">
+                                    <div class="section__list-item ">
+                                        <!-- <div class="name mb-2">{{allresumes.projecttitle}}</div> -->
+                                        {% for i in data3 %}
+                                          <div class="text mb-2"><b>{{i.proname}}</b><br>{{i.prodetails}}</div>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                                
+                                    <div class="section__title">Skills</div>
+                                        <div class="skills">
+                                            <div class="skills__item">
+                                                
+                                                    <div class="left">
+                                                        <div class="name">{{i.skills}}</div>
+                                                    </div>
+                                            </div>
+                                        
+                                        </div>
+                                        
+                                
+                                
+                                    <div class="section__title">Certifications</div>
+                                        <div class="skills">
+                                            <div class="skills__item">
+                                                
+                                                    <div class="left">
+                                                      {% for i in data5 %}
+                                                        <div class="text mb-2"><b>{{i.certiname}} - {{i.certidate}}</b><br>{{i.cerinfo}}</div>
+                                                      {% endfor %}
+                                                    </div>
+                                            </div>
+                                        </div>
+                               
+                                
+                                    <div class="section__title">Achievments</div>
+                                        <div class="skills">
+                                            <div class="skills__item">
+                                                
+                                                    <div class="left">
+                                                      {% for i in data4 %}
+                                                        <div class="text mb-2"><b>{{i.achiname}} - {{i.achidate}}</b><br>{{i.achiinfo}}</div>
+                                                      {% endfor %}
+                                                    </div>
+                                            </div>
+                                        </div>
+                               
+                                    <div class="section__title">Internships</div>
+                                        <div class="skills">
+                                            <div class="skills__item">
+                                                
+                                                    <div class="left">
+                                                      {% for i in data2 %}
+                                                        <div class="text mb-2"><b>{{i.internname}} - {{i.interndate}}</b><br>{{i.interns}}</div>
+                                                      {% endfor %}
+                                                    </div>
+                                            </div>
+                                        </div>
+                               
+                                    <div class="section__title">Strengths</div>
+                                        <div class="skills">
+                                            <div class="skills__item">
+                                                
+                                                    <div class="left">
+                                                        <div class="name">{{i.strength}}</div>
+                                                    </div>
+                                            </div>
+                                        </div>
+                               
+                                    <div class="section__title">Language</div>
+                                        <div class="skills">
+                                            <div class="skills__item">
+                                                
+                                                    <div class="left">
+                                                        <div class="name">{{i.lang}}</div>
+                                                    </div>
+                                            </div>
+                                        </div>
+                                
+                                    <div class="section__title">Hobbies</div>
+                                        <div class="skills">
+                                            <div class="skills__item">
+                                                
+                                                    <div class="left">
+                                                        <div class="name">{{i.hob}}</div>
+                                                    </div>
+                                            </div>
+                                        </div>
+                               
+                                    <div class="section__title">References</div>
+                                        <div class="skills">
+                                            <div class="skills__item">
+                                                
+                                                    <div class="left">
+                                                        <div class="name">{{i.refe}}</div>
+                                                    </div>
+                                            </div>
+                                        </div>
+                        </div>
+{% endfor %}
+
+</body>
+
+</html>

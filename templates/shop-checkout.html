@@ -1,0 +1,365 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}<!doctype html>
+<html lang="en">
+
+<!-- Mirrored from transvelo.github.io/skola-html/5.1/shop-checkout.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 26 Jan 2022 12:13:22 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="favicon.png">
+
+    <!-- Font -->
+     <link href="{% static 'https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&amp;display=swap' %}" rel="stylesheet">
+    <link href="{% static 'https://fonts.googleapis.com/css2?family=Fredoka+One&amp;family=Lora:wght@400;700&amp;family=Montserrat:wght@400;500;600;700&amp;family=Nunito:wght@400;700&amp;display=swap' %}" rel="stylesheet">
+
+    <!-- Libs CSS -->
+    <link rel="stylesheet" href="{% static 'assets/fonts/fontawesome/fontawesome.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/libs/%40fancyapps/fancybox/dist/jquery.fancybox.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/libs/aos/dist/aos.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/libs/choices.js/public/assets/styles/choices.min.css">
+    <link rel="stylesheet" href="{% static 'assets/libs/flickity-fade/flickity-fade.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/libs/flickity/dist/flickity.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/libs/highlightjs/styles/vs2015.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/libs/jarallax/dist/jarallax.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/libs/quill/dist/quill.core.css' %}" />
+    <!-- Map -->
+    <link href='../../../api.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css' rel='stylesheet' />
+
+    <!-- Theme CSS -->
+     <link rel="stylesheet" href="{% static 'assets/css/theme.min.css' %}">
+
+    <title>Checkout</title>
+
+ <div id="Overview" class="mb-8">
+
+                </div>
+
+
+    <!-- PAGE TITLE
+    ================================================== -->
+<!-- ======= Header ======= -->
+  <header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center">
+
+      <h1 class="logo me-auto"><a href="index.html">TechLaas</a></h1>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+      <nav id="navbar" class="navbar order-last order-lg-0">
+
+        <ul>
+
+          <li><a class="active" href="{% url 'index' %}">Home</a></li>
+          <li><a href="{% url 'about' %}">About</a></li>
+          <li><a href="{% url 'courses' %}">Courses</a></li>
+
+          <li><a href="{% url 'contact' %}">Contact</a></li>
+          <li><a href="{% url 'pricing' %}">Pricing</a></li>
+
+<!--          <li><a href="{% url 'searchbar' %}"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">-->
+<!--  <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>-->
+<!--</svg></a></li>-->
+<!--          <div style="margin-top:22px;margin-left:10px;">-->
+
+              <!-- Search -->
+            <form action="{% url 'searchbar' %}" method="GET" >
+                <div style="margin-top:22px;margin-left:10px;">
+
+
+                            <!-- Icon -->
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M8.80758 0C3.95121 0 0 3.95121 0 8.80758C0 13.6642 3.95121 17.6152 8.80758 17.6152C13.6642 17.6152 17.6152 13.6642 17.6152 8.80758C17.6152 3.95121 13.6642 0 8.80758 0ZM8.80758 15.9892C4.8477 15.9892 1.62602 12.7675 1.62602 8.80762C1.62602 4.84773 4.8477 1.62602 8.80758 1.62602C12.7675 1.62602 15.9891 4.8477 15.9891 8.80758C15.9891 12.7675 12.7675 15.9892 8.80758 15.9892Z" fill="currentColor"/>
+                                <path d="M19.762 18.6121L15.1007 13.9509C14.7831 13.6332 14.2687 13.6332 13.9511 13.9509C13.6335 14.2682 13.6335 14.7831 13.9511 15.1005L18.6124 19.7617C18.7712 19.9205 18.9791 19.9999 19.1872 19.9999C19.395 19.9999 19.6032 19.9205 19.762 19.7617C20.0796 19.4444 20.0796 18.9295 19.762 18.6121Z" fill="currentColor"/>
+                            </svg>
+
+
+
+                    <input class="input" type="search" placeholder="Search" aria-label="Search" name="query" style="width:100px;">
+                    <button class="btn btn-sm my-2 my-sm-0 text-secondary icon-xs d-flex align-items-center" type="submit"></button>
+                </div>
+            </form>
+<!--          </div>-->
+
+          <div>
+
+            {% if user.is_authenticated %}
+          <li class="dropdown"><a href="#"><span class="get-started-btn">{{user.first_name}}</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="{% url 'profile' %}">Profile</a></li>
+              <li><a href="{% url 'changepassword' %}">Change Password</a></li>
+              <li><a href="{% url 'logout' %}">Logout</a></li>
+            </ul>
+          </li>
+            {% else %}
+            <li class="dropdown"><a href="#"><span ><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+  <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+  <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+</svg></span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="{% url 'login' %}">Login</a></li>
+              <li><a href="{% url 'register' %}" >register</a></li>
+            </ul>
+          </li>
+            {% endif %}
+            </div>
+        </ul>
+
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav>
+
+<!--          <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>-->
+<!--            <ul>-->
+<!--              <li><a href="#">Drop Down 1</a></li>-->
+<!--              <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>-->
+<!--                <ul>-->
+<!--                  <li><a href="#">Deep Drop Down 1</a></li>-->
+<!--                  <li><a href="#">Deep Drop Down 2</a></li>-->
+<!--                  <li><a href="#">Deep Drop Down 3</a></li>-->
+<!--                  <li><a href="#">Deep Drop Down 4</a></li>-->
+<!--                  <li><a href="#">Deep Drop Down 5</a></li>-->
+<!--                </ul>-->
+<!--              </li>-->
+<!--              <li><a href="#">Drop Down 2</a></li>-->
+<!--              <li><a href="#">Drop Down 3</a></li>-->
+<!--              <li><a href="#">Drop Down 4</a></li>-->
+<!--            </ul>-->
+<!--          </li>-->
+
+<!--        </ul>-->
+<!--        <i class="bi bi-list mobile-nav-toggle"></i>-->
+<!--      </nav>&lt;!&ndash; .navbar &ndash;&gt;-->
+
+<!--      <a href="{% url 'login' %}" class="get-started-btn">Login</a>-->
+<!--      <a href="{% url 'register' %}" class="get-started-btn">register</a>-->
+
+    </div>
+  </header><!-- End Header -->
+    <header class="py-8 py-md-10" style="background-image: none;">
+        <div class="container text-center py-xl-2" style="height:100%;">
+            <h1 class="display-4 fw-semi-bold mb-0">Checkout</h1>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb breadcrumb-scroll justify-content-center">
+                    <li class="breadcrumb-item">
+                        <a class="text-gray-800" href="#">
+                            Home
+                        </a>
+                    </li>
+                    <li class="breadcrumb-item text-gray-800 active" aria-current="page">
+                      Checkout
+                    </li>
+                </ol>
+            </nav>
+        </div>
+        <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+        <!-- Img -->
+        <img class="d-none img-fluid" src="...html" alt="...">
+    </header>
+
+
+    <!-- SHOP CHECKOUT
+    ================================================== -->
+    <div class="container pb-6 pb-xl-10">
+        <form name="checkout" method="post" class="checkout woocommerce-checkout" action="?action=create_payment" novalidate="">
+            {% csrf_token %}
+            <div class="col2-set" id="customer_details">
+                <div class="col-1">
+                    <div class="woocommerce-billing-fields">
+                        <h3>Billing details</h3>
+                        <div class="woocommerce-billing-fields__field-wrapper">
+                            <p class="form-row form-row-first validate-required woocommerce-invalid woocommerce-invalid-required-field" id="billing_first_name_field" data-priority="10">
+                                <label for="firstname" class="">First name <abbr class="required" title="required">*</abbr></label>
+                                <input type="text" class="input-text " name="first_name" id="firstname" placeholder="" value="{{user.first_name}}" autocomplete="given-name" autofocus="autofocus">
+                            </p>
+                            <p class="form-row form-row-last validate-required" id="billing_last_name_field" data-priority="20">
+                                <label for="lastname" class="">Last name <abbr class="required" title="required">*</abbr></label>
+                                <input type="text" class="input-text " name="last_name" id="lastname" placeholder="" value="{{user.last_name}}" autocomplete="family-name">
+                            </p>
+                            <p class="form-row form-row-wide" id="billing_company_field" data-priority="30">
+                                <label for="company" class="">Company name</label>
+                                <input type="text" class="input-text " name="company" id="company" placeholder="" value="" autocomplete="organization">
+                            </p>
+                            <p class="form-row form-row-wide address-field validate-required" id="billing_address_1_field" data-priority="50">
+                                <label for="address_1" class="">Address 1 <abbr class="required" title="required">*</abbr></label>
+                                <input type="text" class="input-text " name="address_1" id="address_1" placeholder="House number and street name" value="{{user.address}}" autocomplete="address-line1">
+                            </p>
+                            <p class="form-row form-row-wide address-field" id="address_2_field" data-priority="60">
+                                 <label for="address_1" class="">Address 2</label>
+                                <input type="text" class="input-text " name="address_2" id="address_2" placeholder="Apartment, suite, unit etc. (optional)" value="" autocomplete="address-line2">
+                            </p>
+                            <p class="form-row form-row-wide address-field validate-required" id="billing_city_field" data-priority="70" data-o_class="form-row form-row-wide address-field validate-required">
+                                <label for="city" class="">Town / City <abbr class="required" title="required">*</abbr></label>
+                                <input type="text" class="input-text " name="city" id="city" placeholder="" value="{{user.city}}" autocomplete="address-level2">
+                            </p>
+                            <p class="form-row form-row-wide address-field validate-state" id="billing_state_field" data-priority="80" data-o_class="form-row form-row-wide address-field validate-state">
+                                <label for="state" class="">State</label>
+                                <input type="text" class="input-text " value="{{user.state}}" placeholder="" name="state" id="state" autocomplete="address-level1">
+                            </p>
+                            <p class="form-row form-row-wide address-field validate-postcode validate-required" id="billing_postcode_field" data-priority="90" data-o_class="form-row form-row-wide address-field validate-required validate-postcode">
+                                <label for="pincode" class="">Postcode <abbr class="required" title="required">*</abbr></label>
+                                <input type="text" class="input-text " name="pincode" id="pincode" placeholder="" value="{{user.pincode}}" autocomplete="postal-code">
+                            </p>
+                            <p class="form-row form-row-first validate-required validate-phone" id="billing_phone_field" data-priority="100">
+                                <label for="phonenumber" class="">Phone Number <abbr class="required" title="required">*</abbr></label>
+                                <input type="tel" class="input-text " name="phonenumber" id="phonenumber" placeholder="" value="{{user.phonenumber}}" autocomplete="tel">
+                            </p>
+                            <p class="form-row form-row-last validate-required validate-email" id="billing_email_field" data-priority="110">
+                                <label for="email" class="">Email address <abbr class="required" title="required">*</abbr></label>
+                                <input type="email" class="input-text " name="email" id="email" placeholder="" value="{{user.email}}" autocomplete="email">
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-2">
+                    <div class="woocommerce-shipping-fields"></div>
+                    <div class="woocommerce-additional-fields">
+                        <h3>Additional information</h3>
+                        <div class="woocommerce-additional-fields__field-wrapper">
+                            <p class="form-row notes" id="order_comments_field" data-priority=""><label for="order_comments" class="">Order notes</label><textarea name="order_comments" class="input-text " id="order_comments" placeholder=""  rows="7" cols="5"></textarea></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="order_review" class="woocommerce-checkout-review-order">
+                {% for i in course %}
+                <div class="woocommerce-checkout-review-order-inner">
+                    <h3 id="order_review_heading">Your order</h3>
+                    <table class="shop_table woocommerce-checkout-review-order-table">
+                        <thead>
+                            <tr>
+                                <th class="product-name">Product</th>
+                                <th class="product-total">Total</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="cart_item">
+                                <td class="product-name">
+                                    {{i.title}}
+
+                                </td>
+                                <td class="product-total">
+                                    <span class="woocommerce-Price-amount amount">
+                                        <span class="woocommerce-Price-currencySymbol">$</span>
+                                        {{i.price}}
+                                    </span>
+                                </td>
+                            </tr>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                        <tr class="order-total">
+                                <th>Total</th>
+                                <td><strong><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">₹</span>{{i.price}}</span></strong> </td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                    {% endfor %}
+                </div>
+
+                <div id="payment" class="woocommerce-checkout-payment">
+
+
+                    <div class="form-row place-order">
+                        <button type="submit" id="rzp-button1" class="btn btn-rounded btn-dark">
+                            PLACE ORDER
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <!-- CALL ACTION
+    ================================================== -->
+    <section class="py-6 py-md-11 border-top border-bottom" data-jarallax data-speed=".8" style="background-image: url({% static 'assets/img/illustrations/illustration-1.jpg' %})">
+        <div class="container text-center py-xl-4" data-aos="fade-up">
+            <div class="row">
+
+                     <script>
+                        var options = {
+                            "key": 'rzp_test_RITaLty6rvaloA', // Enter the Key ID generated from the Dashboard
+                            "amount": "{{razoramount}}", // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+                            "currency": "INR",
+                            "name": "TECHLaaS",
+                            "description": "Transaction",
+                            "image": "https://example.com/your_logo",
+                            "order_id": "{{order_id}}", //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+                            "handler": function (response){
+                                console.log("success")
+                                var form = document.getElementById["myform"];
+
+
+                                var a = response.razorpay_payment_id;
+
+                                alert({{order_id}})
+
+                                window.location.href = 'http://127.0.0.1:8000/paymentdone?order_id=${response.razorpay_order_id}&user_id=${response.USER}&payment_id='+a
+
+                            },
+                            "theme": {
+                                "color": "#3399cc"
+                            }
+                        };
+                        var rzp1 = new Razorpay(options);
+                        rzp1.on('payment.failed', function (response){
+                                alert(response.error.description);
+                        });
+                        document.getElementById('rzp-button1').onclick = function(e){
+                            console.log("button click");
+                            rzp1.open();
+                            e.preventDefault();
+                        }
+                        </script>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+    <!-- JAVASCRIPT
+    ================================================== -->
+    <!-- Libs JS -->
+    <script src="{% static 'assets/libs/jquery/dist/jquery.min.js' %}"></script>
+    <script src="{% static 'assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'assets/libs/%40fancyapps/fancybox/dist/jquery.fancybox.min.js' %}"></script>
+    <script src="{% static 'assets/libs/aos/dist/aos.js' %}"></script>
+    <script src="{% static 'assets/libs/choices.js/public/assets/scripts/choices.min.js' %}"></script>
+    <script src="{% static 'assets/libs/countup.js/dist/countUp.min.js' %}"></script>
+    <script src="{% static 'assets/libs/dropzone/dist/min/dropzone.min.js' %}"></script>
+    <script src="{% static 'assets/libs/flickity/dist/flickity.pkgd.min.js' %}"></script>
+    <script src="{% static 'assets/libs/flickity-fade/flickity-fade.js' %}"></script>
+    <script src="{% static 'assets/libs/highlightjs/highlight.pack.min.js' %}"></script>
+    <script src="{% static 'assets/libs/imagesloaded/imagesloaded.pkgd.min.js' %}"></script>
+    <script src="{% static 'assets/libs/isotope-layout/dist/isotope.pkgd.min.js' %}"></script>
+    <script src="{% static 'assets/libs/jarallax/dist/jarallax.min.js' %}"></script>
+    <script src="{% static 'assets/libs/jarallax/dist/jarallax-video.min.js' %}"></script>
+    <script src="{% static 'assets/libs/jarallax/dist/jarallax-element.min.js' %}"></script>
+    <script src="{% static 'assets/libs/parallax-js/dist/parallax.min.js' %}"></script>
+    <script src="{% static 'assets/libs/quill/dist/quill.min.js' %}"></script>
+    <script src="{% static 'assets/libs/smooth-scroll/dist/smooth-scroll.min.js' %}"></script>
+    <script src="{% static 'assets/libs/typed.js/lib/typed.min.js' %}"></script>
+
+    <!-- Map -->
+    <script src='../../../api.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
+
+    <!-- Theme JS -->
+    <script src="{% static 'assets/js/theme.min.js' %}"></script>
+
+
+
+
+</body>
+
+<!-- Mirrored from transvelo.github.io/skola-html/5.1/shop-checkout.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 26 Jan 2022 12:13:23 GMT -->
+</html>
+{% endblock %}
